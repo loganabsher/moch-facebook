@@ -1,7 +1,8 @@
 'use strict';
 
-const createError = require('http-errors');
 const debug = require('debug')('moch-facebook:basic-auth-middleware');
+
+const createError = require('http-errors');
 
 module.exports = (req, res, next) => {
   debug('basic auth');

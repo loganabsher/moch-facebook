@@ -1,7 +1,8 @@
 'use strict';
 
-const createError = require('http-errors');
 const debug = require('debug')('moch-facebook:error-middleware');
+
+const createError = require('http-errors');
 
 module.exports = function(err, req, res, next) {
   debug('error-middleware');
