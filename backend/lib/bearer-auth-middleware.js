@@ -1,8 +1,9 @@
 'use strict';
 
+const debug = require('debug')('moch-facebook:bearer-auth-middleware');
+
 const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
-const debug = require('debug')('moch-facebook:bearer-auth-middleware');
 
 const User = require('../model/user.js');
 
