@@ -4,7 +4,8 @@
   "description": "backend API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "DEBUG='credibleEdibles*' mocha ",
+    "start": "DEBUG='credibleEdibles*' node server.js"
   },
   "keywords": [
     "API"
@@ -18,6 +19,8 @@
     "bcrypt": "^3.0.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "cors": "^2.8.4",
     "debug": "^3.1.0",
     "del": "^3.0.0",
     "dotenv": "^6.0.0",
@@ -25,6 +28,7 @@
     "faker": "^4.1.0",
     "http-errors": "^1.6.3",
     "jsonwebtoken": "^8.3.0",
+    "mocha": "^5.2.0",
     "mongoose": "^5.2.5",
     "morgan": "^1.9.0",
     "multer": "^1.3.1",
