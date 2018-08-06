@@ -4,7 +4,8 @@
   "description": "backend API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "DEBUG='credibleEdibles*' mocha ",
+    "start": "DEBUG='credibleEdibles*' node server.js"
   },
   "keywords": [
     "API"
