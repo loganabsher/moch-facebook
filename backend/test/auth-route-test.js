@@ -28,11 +28,12 @@ describe('auth-route-test.js', function(){
         request.post(`${url}/api/signup`)
           .send(testUser)
           .end((err, res) => {
+            console.log(res.text);
+            console.log(res.body);
+            console.log(res.status);
             if(err) return done(err);
             expect(res.status).to.equal(200);
             // expect(res.text).to.be.a('string');
-            console.log(res.text);
-            console.log(res.body);
             done();
           });
       });

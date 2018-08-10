@@ -4,8 +4,9 @@
   "description": "backend API",
   "main": "index.js",
   "scripts": {
-    "test": "DEBUG='credibleEdibles*' mocha ",
-    "start": "DEBUG='credibleEdibles*' node server.js"
+    "test": "DEBUG='moch-facebook*' mocha ",
+    "start": "DEBUG='moch-facebook*' node server.js",
+    "nodemon": "DEBUG='moch-facebook*' nodemon server.js"
   },
   "keywords": [
     "API"

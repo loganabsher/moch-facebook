@@ -29,4 +29,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 app.use(morgan('dev'));
 
+app.use(authRoutes);
+app.use(errors);
+
 app.listen(PORT, () => debug(`backend running on PORT: ${PORT}`));

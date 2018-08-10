@@ -1,6 +1,6 @@
 'use strict';
 
-const debug = require('debug')('credibleEdibles:user');
+const debug = require('debug')('moch-facebook:user');
 
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
