@@ -73,15 +73,16 @@ describe('auth-route-test.js', function(){
     beforeEach((done) => {
       request.post(`${url}/api/signup`)
         .send(testUser)
-        .then(() => done())
-        .catch(done);
+        .end((err) => {
+          done();
+        });
     });
 
-    afterEach((done) => {
-      User.remove({username: 'test user'})
-        .then(() => done())
-        .catch(done);
-    });
+    // afterEach((done) => {
+    //   User.remove({username: 'test user'})
+    //     .then(() => done())
+    //     .catch(done);
+    // });
 
     describe('with valid input', () => {
       it('should return a status code of 200, and the user\'s information', (done) => {
