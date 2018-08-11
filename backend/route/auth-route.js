@@ -43,7 +43,7 @@ authRouter.get('/api/login', basicAuth, (req, res, next) => {
         .then((token) => {
           let cookieOptions = {maxAge: 900000000};
           res.cookie('login-token', token, cookieOptions);
-          res.json(token);
+          res.json(user);
         });
     })
     .catch(next);

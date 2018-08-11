@@ -30,8 +30,9 @@ describe('auth-route-test.js', function(){
         .then(() => done())
         .catch(done);
     });
+
     describe('with valid input', () => {
-      it('should return a status code of 200, and the user\'s information', (done) => {
+      it('should return a status code of 200, and a jsonwebtoken', (done) => {
         request.post(`${url}/api/signup`)
           .send(testUser)
           .end((err, res) => {
@@ -69,6 +70,30 @@ describe('auth-route-test.js', function(){
   });
 
   describe('GET: /api/login', function(){
+    beforeEach((done) => {
+      request.post(`${url}/api/signup`)
+        .send(testUser)
+        .then(() => done())
+        .catch(done);
+    });
 
+    afterEach((done) => {
+      User.remove({username: 'test user'})
+        .then(() => done())
+        .catch(done);
+    });
+
+    describe('with valid input', () => {
+      it('should return a status code of 200, and the user\'s information', (done) => {
+        request.get(`${url}/api/login`)
+          .auth(testUser.username, testUser.password)
+          .end((err, res) => {
+            if(err) return done(err);
+            console.log(res);
+            expect(res.status).to.equal(200);
+            done();
+          });
+      });
+    });
   });
 });
